@@ -9,11 +9,15 @@ driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 
 # 定位搜索框并输入关键词
-search_box = driver.find_element(By.ID, "kw")
+# search_box = driver.find_element(By.ID, "kw")
+# 使用XPath定位搜索框  
+search_box = driver.find_element(By.XPATH, "//input[@id='kw']")  
 search_box.send_keys("软件测试")
 
 # 定位搜索按钮并点击
-search_button = driver.find_element(By.ID, "su")
+# search_button = driver.find_element(By.ID, "su")
+# 使用CSS选择器定位搜索按钮  
+search_button = driver.find_element(By.CSS_SELECTOR, "input#su")  
 search_button.click()
 
 # 等待2秒，查看结果
